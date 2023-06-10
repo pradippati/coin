@@ -32,17 +32,16 @@ PHP (>= 7.3) with the necessary extensions (e.g., OpenSSL, PDO, Mbstring, etc.)
 Composer (a dependency management tool for PHP)
 
 
-Create a new Lumen project:
+clone project mentioned repo:
 -----------------------------------------------------------------
-composer create-project --prefer-dist laravel/lumen project-name
+git clone https://github.com/pradippati/coin.git
 ---------------------------------------------------------------------------------------
-Replace "project-name" with the desired name for your project.
 
-
-cd project-name
-------------------------------
 
 Open the .env file and configure your database connection settings 
+the coin.sql file present in root directory import this
+or run the comammnd
+php artisan migrate
 --------------------------------------------------------------------------------------
 
 php -S localhost:8000 -t public
@@ -53,5 +52,8 @@ Create the artisan command:
 -------------------------------------------------
 In your Laravel/Lumen project, open a command line interface and navigate to the project directory. Then run the following command to create a new artisan command:
 
-php artisan make:command FetchCoins
--------------------------------------------------
+php artisan coin:fetch-this is new create command
+---------------------------------------------------------------------------
+php artisan coin:fetch
+
+This is the new command run fetch the data from  https://www.coingecko.com/en/api/documentation api and store in database
